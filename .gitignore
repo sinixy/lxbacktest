@@ -1,0 +1,7 @@
+__pycache__
+data/ohlcv-*
+data/trades-*
+data/*.db
+data/*.csv
+data/*.json
+.env
