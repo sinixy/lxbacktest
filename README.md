@@ -1,9 +1,11 @@
-# TL;DR Workflow
+## TL;DR Workflow
 ```
 1. Pick strategy in run.py → run_1d/run_1h → generate raw trades.
 2. Run stats/extender.py → filter extended trades.
 3. Run stats/stats.py → generate final stats.csv.
 ```
+
+---
 
 Main file: **`run.py`**  
 - Import the strategy you want from the `strategies/` folder.  
@@ -46,7 +48,7 @@ This is your final summarized performance file, used for deeper analysis.
 
 ## Bonus
 There's a chaotic analysis notebook: **`stats.ipynb`**.  
-Use it at your own risk. No promises.
+Use it at your own risk. No promises (and comments).
 
 ---
 
