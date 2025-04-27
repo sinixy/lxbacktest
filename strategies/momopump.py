@@ -21,6 +21,14 @@ FIBO = {
 
 class SimplePump(Strategy):
 
+    """
+    The Base strategy. 1h version of it, actually.
+
+    If on a single day the stock rose by more than day_net_change, with relative volume > rvol,
+    and pullbacked from its high to the close of the day < pullback,
+    then buy at entry_hour with stop % = sl_prc, and take profit % = sl_prc * reward.
+    """
+
     pullback = 0.5
     rvol = 5
     day_net_change = 0.3
@@ -92,6 +100,10 @@ class SimplePump(Strategy):
 
 class SimplePumpDaily_Fibo(Strategy):
 
+    """
+    Enter on close with stop at fibo level and exit at tp or close of the next day.
+    """
+
     pullback = 0.6
     rvol = 3
     day_net_change = 0.3
@@ -149,6 +161,10 @@ class SimplePumpDaily_Fibo(Strategy):
 
 class SimplePumpDaily_CC(Strategy):
 
+    """
+    Just enter on close and exit on close of the next day.
+    """
+
     pullback = 0.5
     rvol = 5
     day_net_change = 0.3
@@ -183,6 +199,10 @@ class SimplePumpDaily_CC(Strategy):
         return ['day_net_change', 'rvol', 'pullback']
 
 class SimplePumpDaily_CCPRC(Strategy):
+
+    """
+    Just enter on close and exit on close of the next day, or if SL/TP is triggered.
+    """
 
     pullback = 0.5
     rvol = 5
@@ -230,6 +250,10 @@ class SimplePumpDaily_CCPRC(Strategy):
 class SimplePumpDaily_OC(Strategy):
     # !!! trade_on_close = False !!!
 
+    """
+    Just enter on open of the next day and exit on close of the next day.
+    """
+
     pullback = 0.5
     rvol = 5
     day_net_change = 0.3
@@ -266,6 +290,10 @@ class SimplePumpDaily_OC(Strategy):
 
 class SimplePumpDaily_OCPRC(Strategy):
     # !!! trade_on_close = False !!!
+
+    """
+    Just enter on open of the next day and exit on close of the next day, or if SL/TP is triggered.
+    """
 
     pullback = 0.5
     rvol = 5
